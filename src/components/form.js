@@ -63,7 +63,7 @@ class Form extends Component {
         <form>
           <label>
             <input type="text" name="cityName" onChange={this.handleChange} placeholder="City Name" />
-            <button onClick={this.handleSubmit}>s</button>
+            <button onClick={this.handleSubmit}><i class="fas fa-search"></i></button>
           </label>
         </form>
       <div className="alert alert-danger alert-dismissable fade show" role="alert">
