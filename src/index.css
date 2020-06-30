@@ -38,7 +38,7 @@ body {
   font-family: sans-serif;
 }
 .temp{
-  background-color: #C9BBC8;
+  background-color: steelblue;
   padding: 4px;
   color: #ffffff;
   font-weight: bold;
@@ -93,6 +93,7 @@ body {
   border-radius: 0px 10px 10px 0px;
   outline: none;
   text-align: center;
+  font-family: sans-serif;
   border: none;
   color: white;
   background-color: rgba(94, 151, 94, 0.63);

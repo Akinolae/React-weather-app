@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, setState } from "react";
 
 class Nav extends Component {
     render(){
+        console.log(setState);
+        
         return(
             <div className="navigation">
                 <nav>

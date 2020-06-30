@@ -5,7 +5,7 @@ class Body extends Component {
             date: new Date(),
             timeOfDay : '',
         }
-
+        
         componentDidMount () {
             const {date} = this.state;
             if(date.getHours() < 12){
