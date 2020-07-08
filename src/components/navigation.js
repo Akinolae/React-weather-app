@@ -1,17 +1,20 @@
-import React, { Component, setState } from "react";
-
+import React, { Component } from "react";
+import {  Link } from 'react-router-dom';
 class Nav extends Component {
     render(){
-        console.log(setState);
-        
+        const style = {
+            color: '#5a5353',
+            listStyle: 'none',
+            textDecoration: 'none',
+            padding: '15px'
+        }
         return(
             <div className="navigation">
                 <nav>
                     <ul>
-                        <li>version</li>
-                        <li>About</li>
-                        <li>search</li>
-                        <li>weather</li>
+                        {/* <li>version</li> */}
+                        <Link to='/Version' style={style}><li>version</li></Link>
+                        <Link to='/about' style={style}><li>about</li></Link>
                     </ul>
                 </nav>
             </div>

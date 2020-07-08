@@ -5,7 +5,7 @@ class Body extends Component {
             date: new Date(),
             timeOfDay : '',
         }
-        
+
         componentDidMount () {
             const {date} = this.state;
             if(date.getHours() < 12){
@@ -24,7 +24,6 @@ class Body extends Component {
             }
     }
     render(){
-        console.log(this.props);
         return(
             <div>
                 <p className="Time">{this.state.timeOfDay}</p>
@@ -32,7 +31,7 @@ class Body extends Component {
                     <div className="card-body">
                         <p className="description">{this.props.currentCity}, <strong>{this.props.country}</strong></p>
                         <p className="temp">{this.props.temp}<sup>&deg; C</sup></p>
-                        <p>{this.props.desc}</p>
+                        <p className="weather_desc">{this.props.desc}</p>
                     </div>
                 </div>
             </div>
