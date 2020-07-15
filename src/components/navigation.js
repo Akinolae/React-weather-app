@@ -3,18 +3,21 @@ import {  Link } from 'react-router-dom';
 class Nav extends Component {
     render(){
         const style = {
-            color: '#5a5353',
-            listStyle: 'none',
-            textDecoration: 'none',
-            padding: '15px'
+            navigation: {
+                color: '#5a5353',
+                    listStyle: 'none',
+                    textDecoration: 'none',
+                    padding: '15px'
+            }
         }
+        const { navigation } = style;
         return(
-            <div className="navigation">
-                <nav>
+            <div className="container">
+                <nav className="navbar navbar-expand-lg navbar-light bg-red">
                     <ul>
                         {/* <li>version</li> */}
-                        <Link to='/Version' style={style}><li>version</li></Link>
-                        <Link to='/about' style={style}><li>about</li></Link>
+                        <Link to='/Version' style={navigation}><li>version</li></Link>
+                        <Link to='/about' style={navigation}><li>about</li></Link>
                     </ul>
                 </nav>
             </div>

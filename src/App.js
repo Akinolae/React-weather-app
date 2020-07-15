@@ -1,24 +1,24 @@
-import React, { Component, version } from 'react';
+import React, { Component } from 'react';
 import Version from './components/version';
-import Api from './components/newsdata';
-import Form from './components/form';
+import NewsUi from './components/News/NewsUi';
 import Nav from './components/navigation';
 import About from './components/about';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FormUI from './components/Form/FormUI';
 
 class App extends Component{
   render(){
   return (
     <Router>
-      <div>
+      <React.Fragment>
         <Nav />
         <Switch>
         <Route path="/about" exact component={About} />
         <Route path="/version" exact component={Version} />
         </Switch>
-        <Form />
-        <Api />
-      </div>
+        <FormUI />
+        <NewsUi />
+      </React.Fragment>
     </Router>
   );
   }

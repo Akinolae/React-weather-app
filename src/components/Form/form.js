@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Body from "./bodyPane";
+import BodyPane from "../body/bodypaneview";
 
 class Form extends Component {
-  state = {
-    temperature: "",
-    cityName: "",
-    apiKey: "7733cf409739e72dc2741f7677dcb531",
-    currentCity: '',
-    country: '',
-    weatherDesc: ''
-  };
+  constructor(props){
+    super(props)
+     this.state = {
+       temperature: "",
+       cityName: "",
+       apiKey: "7733cf409739e72dc2741f7677dcb531",
+       currentCity: '',
+       country: '',
+       weatherDesc: ''
+     };
+  }
   // handles the change of inputs and sets the state accordingly;
   handleChange = (event) => {
       const city = event.target.value;
@@ -19,51 +22,48 @@ class Form extends Component {
         });
   }
 
+  style= {
+    color: 'green',
+    fontFamily: 'sans-serif',
+    textAlign: 'center'
+  }
 
 // Here is the section that handles the submission of data,
 // It returns an object containing the current weather information of the city;
   handleSubmit = (event) => {
     event.preventDefault();
     const error = document.getElementById('error');
+    const nothingToDisplay = document.getElementById('nothingToDisplay');
 
     if(this.state.cityName === ''){
-      error.innerText = "city name cannot be empty";
+      error.textContent = "city name cannot be empty";
     }else {
-      error.innerText = ""
+      error.innerText = "";
+      nothingToDisplay.textContent = '';
       axios.get(
         "http://api.openweathermap.org/data/2.5/weather?q= " +
         `${this.state.cityName}` +
         "&units=metric&appid=" +
         `${this.state.apiKey}`
       ).then((info) => {
-        // console.log(info);
         this.setState({
           weatherDesc: info.data.weather[0].description,
           currentCity: info.data.name,
           country: info.data.sys.country
         })
-        // console.log(this.state.data.weather[0].description)
-        console.log(info.data);
+        return <BodyPane temp={this.state.temperature} currentCity={this.state.currentCity} country={this.state.country} desc={this.state.weatherDesc} />
       })
         .catch(err => {
-          error.innerText = "An error occured";
+          error.textContent = 'An error occured';
+          nothingToDisplay.textContent = "there is currently no data to display"
+          setTimeout(() => {
+            error.textContent = "";
+            nothingToDisplay.textContent = "";
+          }, 4000);
         });
     };
   };
-  render() {
-    return (
-      <div className="search">
-        <form>
-          <label>
-            <input type="text" name="cityName" onChange={this.handleChange} placeholder="City Name" />
-            <button onClick={this.handleSubmit}>S</button>
-          </label>
-        </form>
-        <p id='error' className="inputerror"></p>
-        <Body temp={this.state.temperature} currentCity={this.state.currentCity} country={this.state.country} desc={this.state.weatherDesc}/>
-      </div>
-    );
-  }
+
 }
 
 export default Form;
