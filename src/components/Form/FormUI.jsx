@@ -13,6 +13,7 @@ class FormUI extends form {
                 </form>
                 <p id='error' className="inputerror"></p>
                 <p id="nothingToDisplay" style={this.style}> </p>
+                {this.dataChange()}
             </div>
         );
     }

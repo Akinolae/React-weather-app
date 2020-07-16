@@ -6,6 +6,7 @@ class Form extends Component {
   constructor(props){
     super(props)
      this.state = {
+       data: [],
        temperature: "",
        cityName: "",
        apiKey: "7733cf409739e72dc2741f7677dcb531",
@@ -37,6 +38,9 @@ class Form extends Component {
 
     if(this.state.cityName === ''){
       error.textContent = "city name cannot be empty";
+      this.setState({
+        data: []
+      })
     }else {
       error.innerText = "";
       nothingToDisplay.textContent = '';
@@ -47,15 +51,18 @@ class Form extends Component {
         `${this.state.apiKey}`
       ).then((info) => {
         this.setState({
+          data: info,
           weatherDesc: info.data.weather[0].description,
           currentCity: info.data.name,
           country: info.data.sys.country
         })
-        return <BodyPane temp={this.state.temperature} currentCity={this.state.currentCity} country={this.state.country} desc={this.state.weatherDesc} />
       })
         .catch(err => {
           error.textContent = 'An error occured';
           nothingToDisplay.textContent = "there is currently no data to display"
+          this.setState({
+            data: []
+          })
           setTimeout(() => {
             error.textContent = "";
             nothingToDisplay.textContent = "";
@@ -63,6 +70,15 @@ class Form extends Component {
         });
     };
   };
+
+  dataChange = ()=>{
+    const { data } = this.state;
+    if(data.length !== 0){
+        return <BodyPane temp={this.state.temperature} currentCity={this.state.currentCity} country={this.state.country} desc={this.state.weatherDesc} />
+    } else{
+      return " "
+    }
+  }
 
 }
 
