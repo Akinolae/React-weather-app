@@ -10,7 +10,7 @@ class Api extends React.Component{
     }
 
     style = {
-        width: '18rem'
+        width: '20rem'
     }
     componentDidMount = () => {
         var url = 'http://newsapi.org/v2/top-headlines?' +
@@ -28,19 +28,17 @@ class Api extends React.Component{
             const { newsData } = this.state;
             if(newsData.length !== 0){
                 return newsData.map((news, index) =>
-                 <div className="container" key={index}>
                      <div className="row">
-                         <div className="col-sm">
-                         <div className="card" style={this.style}>
-                         <img src={news.urlToImage} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                        <p>{news.title}</p>
-                        <a href={news.url}>{news.url}</a>
-                     </div>
-                    </div>
-                    </div>
-                    </div>
-                </div>)
+                        <div className="col-sm">
+                            <div className="card" style={this.style}>
+                                 <img src={news.urlToImage} className="card-img-top" alt="..." />
+                                 <div className="card-body">
+                                 <p>{news.title}</p>
+                                <a href={news.url}>{news.url}</a>
+                            </div>
+                         </div>
+                        </div>
+                     </div>)
             } else{
                 return <div className="centered">
                          <div className="blob-1"></div>

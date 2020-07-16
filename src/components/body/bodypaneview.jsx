@@ -6,7 +6,7 @@ class BodyPane extends Body {
         return (
             <div id="body">
                 <p className="Time">{this.state.timeOfDay}</p>
-                <div className="card" >
+                <div className="card bodycard" >
                     <div className="card-body">
                         <p className="description">{this.props.currentCity}, <strong>{this.props.country}</strong></p>
                         <p className="temp">{this.props.temp}<sup>&deg; C</sup></p>
