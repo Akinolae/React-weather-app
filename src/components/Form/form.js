@@ -46,7 +46,7 @@ class Form extends Component {
       error.innerText = "";
       nothingToDisplay.textContent = '';
       axios.get(
-        "http://api.openweathermap.org/data/2.5/weather?q= " +
+        "https://api.openweathermap.org/data/2.5/weather?q= " +
         `${this.state.cityName}` +
         "&units=metric&appid=" +
         `${this.state.apiKey}`

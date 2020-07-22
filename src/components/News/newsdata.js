@@ -13,7 +13,7 @@ class Api extends React.Component{
         width: '20rem'
     }
     componentDidMount = () => {
-        var url = 'http://newsapi.org/v2/top-headlines?' +
+        var url = 'https://newsapi.org/v2/top-headlines?' +
             'country=ng&' +
             'apiKey=797bc6132d9d4515a4653fd5350e6ce7';
         Axios.get(url)
