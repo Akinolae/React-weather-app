@@ -13,7 +13,7 @@ class Nav extends Component {
         const { navigation } = style;
         return(
             <div className="container">
-                <nav className="navbar navbar-expand-lg navbar-light bg-red">
+                <nav className="navbar navbar-expand-lg navbar-light">
                     <ul>
                         <Link to='/search' style={navigation}><li>weather search</li></Link>
                         <Link to='/news' style={navigation}><li>news</li></Link>
