@@ -21,29 +21,35 @@ class Api extends React.Component{
         this.setState({
             newsData: data.data.articles
         })
-        // console.log(data.data.articles)
             )
         }
         dataDisplay = () =>{
             const { newsData } = this.state;
             if(newsData.length !== 0){
-                return newsData.map((news, index) =>
-                     <div className="row">
+                return(
+                <div>
+                    <h6 className="newsMakingRounds">News making rounds</h6>
+                <div className = "row container">
+                 {newsData.map((news, index) =>
+                     <div key={index}>
                         <div className="col-sm">
                             <div className="card" style={this.style}>
                                  <img src={news.urlToImage} className="card-img-top" alt="..." />
                                  <div className="card-body">
                                  <p>{news.title}</p>
-                                <a href={news.url}>{news.url}</a>
+                                <a className="links"  href={news.url}>{news.url}</a>
                             </div>
                          </div>
                         </div>
+                     </div>)}
+                     </div>
                      </div>)
             } else{
-                return <div className="centered">
-                         <div className="blob-1"></div>
-                            <div className="blob-2"></div>
-                         </div>
+                return <div className="container">
+                           <div className="loader_back">
+                               <div className="loader blue"></div>
+                           </div>
+                       </div>
             }
         }
     }

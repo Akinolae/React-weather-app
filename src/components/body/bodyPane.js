@@ -10,16 +10,16 @@ class Body extends React.Component {
             const {date} = this.state;
             if(date.getHours() < 12){
                 this.setState({
-                    timeOfDay: "Good morning"
+                    timeOfDay: "Hello, Good morning"
                 })
             } else if (date.getHours() >= 12 && date.getHours() < 17) {
                 this.setState({
-                    timeOfDay: 'Good afternoon'
+                    timeOfDay: 'Hello, Good afternoon'
                 })
         }
             else {
                 this.setState({
-                    timeOfDay: 'Good evening'
+                    timeOfDay: 'Hello, Good evening'
                 })
             }
     }

@@ -35,6 +35,7 @@ class Form extends Component {
     event.preventDefault();
     const error = document.getElementById('error');
     const nothingToDisplay = document.getElementById('nothingToDisplay');
+    // const loader = document.getElementById('loader');
 
     if(this.state.cityName === ''){
       error.textContent = "city name cannot be empty";
@@ -54,7 +55,8 @@ class Form extends Component {
           data: info,
           weatherDesc: info.data.weather[0].description,
           currentCity: info.data.name,
-          country: info.data.sys.country
+          country: info.data.sys.country,
+          temperature: info.data.main.temp
         })
       })
         .catch(err => {
@@ -72,9 +74,9 @@ class Form extends Component {
   };
 
   dataChange = ()=>{
-    const { data } = this.state;
+    const { data, temperature, currentCity, country, weatherDesc } = this.state;
     if(data.length !== 0){
-        return <BodyPane temp={this.state.temperature} currentCity={this.state.currentCity} country={this.state.country} desc={this.state.weatherDesc} />
+        return <BodyPane temp={temperature} currentCity={currentCity} country={country} desc={weatherDesc} />
     } else{
       return " ";
     }

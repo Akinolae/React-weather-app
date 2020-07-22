@@ -8,7 +8,7 @@ class FormUI extends form {
                 <form>
                     <label>
                         <input type="text" name="cityName" onChange={this.handleChange} placeholder="City Name" />
-                        <button onClick={this.handleSubmit}>S</button>
+                        <button onClick={this.handleSubmit}><span><i className="fa fa-search" aria-hidden="true"></i></span></button>
                     </label>
                 </form>
                 <p id='error' className="inputerror"></p>
