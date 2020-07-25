@@ -27,9 +27,9 @@ class Api extends React.Component{
             )
         }
         dataDisplay = () =>{
-            const { newsData, isEmpty } = this.state;
+            const { newsData } = this.state;
 
-            if(!isEmpty){
+            if(newsData.length !== 0){
                 return(
                 <div>
                     <h6 className="newsMakingRounds">News making rounds</h6>
