@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import BodyPane from "../body/bodypaneview";
+import Loader from '../loader';
 
 class Form extends Component {
   constructor(props){
@@ -78,7 +79,7 @@ class Form extends Component {
     if(data.length !== 0){
         return <BodyPane temp={temperature} currentCity={currentCity} country={country} desc={weatherDesc} />
     } else{
-      return " ";
+      return <Loader />;
     }
   }
 

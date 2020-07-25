@@ -14,7 +14,7 @@ class App extends Component{
         <Route path={"/about"} exact component={About} />
         <Route path={"/version"} exact component={Version} />
         <Route path={"/news"} exact component={NewsUi} />
-        <Route path={"/search"} exact component={FormUI} />
+        <Route path={"/"} exact component={FormUI} />
         {/* <NewsUi /> */}
     </Router>
   );

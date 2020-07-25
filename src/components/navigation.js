@@ -15,7 +15,7 @@ class Nav extends Component {
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light">
                     <ul>
-                        <Link to='/search' style={navigation}><li>weather search</li></Link>
+                        <Link to='/' style={navigation}><li>weather search</li></Link>
                         <Link to='/news' style={navigation}><li>news</li></Link>
                         <Link to='/Version' style={navigation}><li>version</li></Link>
                         <Link to='/about' style={navigation}><li>about</li></Link>
