@@ -3,17 +3,19 @@ import {Paper, Box} from "@material-ui/core";
 
 const BodyPane = (props) => {
     const [state, setState] = useState({
-        date: new Date(),
         timeOfDay: ''
     })
-        const componentDidMount = () => {
+
+     const componentDidMount = () => {
             console.log(props);
-            const {date} = this.state;
+            const date = new Date();
+
             if(date.getHours() < 12){
                 setState({
                     timeOfDay: "Hello, Good morning"
                 })
-            } else if (date.getHours() >= 12 && date.getHours() < 17) {
+            } 
+            else if (date.getHours() >= 12 && date.getHours() < 17) {
                 setState({
                     timeOfDay: 'Hello, Good afternoon'
                 })
@@ -26,8 +28,6 @@ const BodyPane = (props) => {
     }
     componentDidMount();
 
-        // const { currentCity, country, temp, desc } = this.props;
-        // const timeOfDay = this.state.timeOfDay;
         return (
             <Box>
                   <div id="body">

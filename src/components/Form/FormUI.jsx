@@ -7,11 +7,10 @@ import useStyle from "./style";
 
 const FormUI = () => {
         const classes = useStyle();
+        const apiKey = "7733cf409739e72dc2741f7677dcb531";
         const [state, setState] = useState({
-            data: [],
             temperature: "",
             cityName: "",
-            apiKey: "7733cf409739e72dc2741f7677dcb531",
             currentCity: '',
             country: '',
             completed: false,
@@ -22,20 +21,14 @@ const FormUI = () => {
               setState({
                   cityName: city,
               });
-              console.log(state)
         }
 
         const handleSubmit = (event) => {
             event.preventDefault();
             const error = document.getElementById('error');
             const nothingToDisplay = document.getElementById('nothingToDisplay');
-            // const loader = document.getElementById('loader');
-        
             if(state.cityName === ''){
               error.textContent = "city name cannot be empty";
-              setState({
-                data: []
-              })
             }else {
               error.innerText = "";
               nothingToDisplay.textContent = '';
@@ -43,11 +36,10 @@ const FormUI = () => {
                 "https://api.openweathermap.org/data/2.5/weather?q= " +
                 `${state.cityName}` +
                 "&units=metric&appid=" +
-                `${state.apiKey}`
+                `${apiKey}`
               ).then((info) => {
                 setState({
-                completed: true,
-                  data: info,
+                  completed: true,
                   weatherDesc: info.data.weather[0].description,
                   currentCity: info.data.name,
                   country: info.data.sys.country,
@@ -57,9 +49,6 @@ const FormUI = () => {
                 .catch(err => {
                   error.textContent = 'An error occured';
                   nothingToDisplay.textContent = "there is currently no data to display"
-                  setState({
-                    data: []
-                  })
                   setTimeout(() => {
                     error.textContent = "";
                     nothingToDisplay.textContent = "";
@@ -69,8 +58,7 @@ const FormUI = () => {
           };
         
          const dataChange = ()=>{
-            const { data, temperature, currentCity, country, weatherDesc } = state;
-            console.log(data);
+            const {  temperature, currentCity, country, weatherDesc } = state;
                 return <BodyPane temp={temperature} currentCity={currentCity} country={country} desc={weatherDesc} />
           }
         return (

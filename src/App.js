@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Version from './components/version';
 import NewsUi from './components/News/NewsUi';
-import Nav from './components/navigation';
+import Nav from './components/nav/navigation';
 import About from './components/about';
 import { BrowserRouter as Router, Route, } from 'react-router-dom';
 import FormUI from './components/Form/FormUI';

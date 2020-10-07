@@ -1,9 +1,10 @@
-import { makeStyles} from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyle = makeStyles((theme) => ({
     div: {
         width: "60%",
-        margin: 'auto'
+        margin: 'auto',
+
     },
     btn: {
         width: '20%',
@@ -19,7 +20,7 @@ const useStyle = makeStyles((theme) => ({
       }, 
       input: {
         width: '100%',
-        backgroundColor: "lightgrey"
+        backgroundColor: "lightgrey",
       },
     form: {
         width: '50%',
