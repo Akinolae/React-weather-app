@@ -216,14 +216,15 @@ body {
   width: 18rem;
   margin:5% auto;
 }
+
 .search > form {
-  display: flex;
   background-color: #f1efef;
   justify-content: center;
-  width: 285px;
   height: 53.5px;
-  margin: auto;
   border-radius: 13px;
+  width: 25%;
+  justify-content: center;
+  margin: auto;
 }
 .search > form > label > input {
   text-align: center;
@@ -231,7 +232,7 @@ body {
   outline: none;
   margin: 6.5px auto;
   border: none;
-  width: 225px;
+  width: 300px;
   color: grey;
   border-radius: 10px 0px 0px 10px;
   box-shadow: inset 0 20px 20px -20px #7a7575;
