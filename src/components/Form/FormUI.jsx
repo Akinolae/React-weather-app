@@ -35,7 +35,7 @@ const FormUI = () => {
                 isloading: 'loading'
               })
               axios.get(
-                "https://api.openweathermap.org/data/2.5/weather?q= " + `${state.cityName}` + "&units=metric&appid=" + `${apiKey}`
+                `https://api.openweathermap.org/data/2.5/weather?q=${state.cityName} &units=metric&appid=${apiKey}`
               ).then((info) => {
                 setState({
                   weatherDesc:info.data.weather[0].description,
