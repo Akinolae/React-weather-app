@@ -3,10 +3,8 @@ import React from 'react';
 class Loader extends React.Component {
     render(){
         return (
-            <div className="container">
-                <div className="loader_back">
-                    <div className="loader blue"></div>
-                </div>
+            <div>
+                <Loader type="Bars" color="#00BFFF" height={100} width={100} timeout={3000} />
             </div>
         )
     }

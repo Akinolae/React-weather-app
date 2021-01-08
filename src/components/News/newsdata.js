@@ -1,6 +1,8 @@
 import React from "react";
 import Axios from "axios";
 import Loader from '../loader';
+import {Div, Text, Grid, Card, Image} from "./style"
+import { Link } from "react-router-dom";
 
 class Api extends React.Component{
     constructor(props){
@@ -12,7 +14,11 @@ class Api extends React.Component{
     }
 
     style = {
-        width: '20rem'
+        padding: '20px',
+        width: '50%',
+        textAlign: 'center',
+        textDecoration: 'none'
+    
     }
     componentDidMount = () => {
         var url = 'https://newsapi.org/v2/top-headlines?' +
@@ -31,23 +37,16 @@ class Api extends React.Component{
 
             if(newsData.length !== 0){
                 return(
-                <div>
-                    <h6 className="newsMakingRounds">News making rounds</h6>
-                    <div className = "row container">
+                <Div style={{height: 'auto'}}>
+                    <Text className="newsMakingRounds">News making rounds</Text>
+                    <Grid>
                         {newsData.map((news, index) =>
-                            <div key={index}>
-                             <div className="col-sm">
-                                <div className="card" style={this.style}>
-                                 <img src={news.urlToImage} className="card-img-top" alt="..." />
-                                 <div className="card-body">
-                                 <p>{news.title}</p>
-                                <a className="links"  href={news.url}>{news.url}</a>
-                                </div>
-                                </div>
-                            </div>
-                        </div>)}
-                         </div>
-                    </div>)
+                            <Card key={index}>
+                             <Image src={news.urlToImage} alt="..." />
+                             <Link style={this.style} to={news.url}>{news.title}</Link>
+                        </Card>)}
+                         </Grid>
+                    </Div>)
             } else{
                 return <Loader />
             }

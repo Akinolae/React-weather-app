@@ -1,32 +1,41 @@
-import { makeStyles } from '@material-ui/core/styles';
 
-const useStyle = makeStyles((theme) => ({
-    div: {
-        width: "60%",
-        margin: 'auto',
+import styled from "styled-components"
 
-    },
-    btn: {
-        width: '20%',
-        height: '40px',
-        outline: 'none',
-        borderRadius: "16px",
-        margin: '20px auto'
-    },
-    style: {
-        color: 'green',
-        fontFamily: 'sans-serif',
-        textAlign: 'center'
-      }, 
-      input: {
-        width: '100%',
-        backgroundColor: "lightgrey",
-      },
-    form: {
-        width: '50%',
-        margin: 'auto',
-        display: 'flex',
-    }
-}))
-
-export default useStyle;
+export const Div = styled.div`
+    width: 100%;
+`
+export const Form = styled.div`
+    top: 25%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+export const Input = styled.input`
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    border: none;
+    background-color: #63606052;
+    color: white;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 20px;
+`
+export const P = styled.p`
+    text-align: center;
+    padding-top: 15px;
+`
+export const Button = styled.button`
+    outline: none;
+    color: white;
+    height: 30px;
+    border: none;
+    width: 100%;
+    max-width: 55px;
+    border-radius: 6px;
+    background: powderblue;
+    margin-top: 15px;
+`

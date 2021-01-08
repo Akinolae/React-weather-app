@@ -1,21 +1,18 @@
 import React from "react";
 import {  Link } from 'react-router-dom';
-import useStyles from "./style";
+import {Navigation,} from "./style";
 
+const style = {
+    textDecoration: 'none'
+}
 const Nav = () => {
-        const classes = useStyles();
-
         return(
-            <div className={classes.div}>
-                <nav className={classes.nav}>
-                    <ul>
-                        <Link to='/'><li>weather search</li></Link>
-                        <Link to='/news'><li>news</li></Link>
-                        <Link to='/Version' ><li>version</li></Link>
-                        <Link to='/about' ><li>about</li></Link>
-                    </ul>
-                </nav>
-            </div>
+            <Navigation>
+                    <Link style={style} to='/'>search</Link>
+                    <Link style={style} to='/news'>news</Link>
+                    <Link style={style} to='/Version'>version</Link>
+                    <Link style={style} to='/about' >about</Link>
+            </Navigation>
         )
 }
 

@@ -1,10 +1,11 @@
 import React from 'react';
+import {Text} from "../style"
 
 const Version = () => {
     return ( 
-        <div className="version">
-            <p>Weather version 1.1.0</p>
-        </div>
+        <Text>
+            Weather version 1.1.0
+        </Text>
      );
 }
  
