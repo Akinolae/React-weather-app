@@ -12,7 +12,10 @@ export const Div = styled.div`
     background-image: url(${bg});
     box-sizing: border-box;
 `
-
+export const Link = styled.a`
+    color: grey;
+    text-decoration: none;
+`
 export const Container = styled.div`
     width: 100%;
     max-width: 60%;

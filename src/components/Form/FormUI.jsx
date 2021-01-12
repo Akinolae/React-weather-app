@@ -49,11 +49,11 @@ const FormUI = () => {
                   error.textContent = 'An error occured';
                   nothingToDisplay.textContent = "there is currently no data to display"
                   setTimeout(() => {
-                    error.textContent = "";
-                    nothingToDisplay.textContent = "";
                     setState({
                       isloading: ''
                     })
+                    error.textContent = "";
+                    nothingToDisplay.textContent = "";
                   }, 4000);
                 });
             };
@@ -72,7 +72,7 @@ const FormUI = () => {
               </Form>
                 <P id='error' style={{color: 'red'}}></P>
                 <P id="nothingToDisplay"></P>
-                {state.isloading === "done" ? dataChange() : state.isloading === "loading" ? <Loader style={{display: 'flex', justifyContent: 'center'}} type="Bars" color="#000000" height={30} width={30} timeout={3000} /> : "" }
+                {state.isloading === "done" ? dataChange() : state.isloading === "loading" ? <Loader style={{display: 'flex', justifyContent: 'center'}} type="Bars" color="#000000" height={30} width={30} timeout={4000} /> : "" }
             </Div>
         );
 }

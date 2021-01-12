@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {Container, Socials} from "../style"
+import {Container, Socials, Link} from "../style"
 
 const About = () => {
     return ( 
@@ -9,10 +8,10 @@ const About = () => {
             <p>This website was built by <a href="https://github.com/Akinolae">Akinola Makinde Emmanuel</a></p>
         </div>
         <Socials>
-            <Link to="https://twitter.com"><i className="fa fa-twitter-square" aria-hidden="true"></i></Link>
-            <Link to="https://facebook.com"><i className="fa fa-facebook-official" aria-hidden="true"></i></Link>
-            <Link to="https://github.com/Akinolae" color='red'><i className="fa fa-git-square" aria-hidden="true"></i></Link>
-            <Link to="https://instagram.com"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
+            <Link href="https://twitter.com"><i className="fa fa-twitter-square" aria-hidden="true"></i></Link>
+            <Link href="https://facebook.com"><i className="fa fa-facebook-official" aria-hidden="true"></i></Link>
+            <Link href="https://github.com/Akinolae"><i className="fa fa-git-square" aria-hidden="true"></i></Link>
+            <Link href="https://instagram.com"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
         </Socials>
      </Container>
      );
